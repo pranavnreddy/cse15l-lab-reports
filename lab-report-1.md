@@ -107,3 +107,27 @@ This will copy `id_rsa.pub` (the public key) to the `.ssh` directory on the serv
 Now when you try logging in, you shouldn't need a password. Try it yourself. 
 
 ## 6. Optimizing Remote Running
+We can use commands even faster. For example, putting a command in quotes at the end of a `ssh` command will remotely execute that command:
+
+```
+$ ssh cs15lwi22<xyz>@ieng6.ucsd.edu "ls"
+# prints out contents of server's home directory
+$ 
+```
+
+We can also use semicolons to execute one command after another:
+```
+$ echo "echoing" >> test.txt ; cat test.txt
+echoing
+$ 
+```
+
+Lastly, pressing the up arrow on your keyboard puts the last command you ran on the command line.
+
+Combining all of these we can get something like this:
+
+```
+$ ssh cs15lwi22<xyz>@ieng6.ucsd.edu "pwd ; echo testing >> testing.txt ; mkdir test_directory ; mv testing.txt test_directory ; cd test_directory ; pwd ; cat test.txt"
+```
+
+![optimizing_commands.png](optimizing_commands.png)

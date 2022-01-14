@@ -35,6 +35,8 @@ Some cool commands:
 * `ls -l`
 * `ls -lat`
 
+![running_commands](running_commands.png)
+
 ## 4. Moving Files With `scp`
 An important tool in working with remote connections is the ability to move files between these two computers. We can use a variety of different tools for this, but we will use a command-line tool to accomplish this here
 

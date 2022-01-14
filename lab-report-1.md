@@ -14,14 +14,15 @@ When you finish you should be able to open VSCode and see a screen like this (mi
 ## 2. Remotely Connecting
 A lot of CSE courses involve using the UCSD lab computers. However, sometimes we are not able to physically access these computers. To get around this, let's remotely connect to the UCSD servers.
 
-First, open a terminal in VSCode (Control + Shift + `, or use the menu). Then, type in this command:
+First, open a terminal in VSCode (Control + Shift + `, or use the menu). Then, type in this command (without the $):
 
 ```
-ssh cs15lwi22<xyz>@ieng6.ucsd.edu
+$ ssh cs15lwi22<xyz>@ieng6.ucsd.edu
 ``` 
-You will have to replace the "\<xyz\>" with your id.
+* You will have to replace the "\<xyz\>" with your id.
+* Don't include the "$". This is just to make it clear that you are typing a command into the terminal.
 
-You might get a message along the lines of "the authenticity of so-and-so cannot be established. Do you want to connect?" Say yes (we already know who we are connecting to). Enter you account password (you can set that [here](https://sdacs.ucsd.edu/~icc/index.php)).
+You might get a message along the lines of "the authenticity of so-and-so cannot be established. Do you want to connect?" Say yes (we already know who we are connecting to). Enter your account password (you can set that [here](https://sdacs.ucsd.edu/~icc/index.php)).
 
 The final product should look something like this:
 
@@ -46,10 +47,10 @@ This commands is called `scp`, and it is from on the client (your computer, not 
 
 Logout of the server (Control+D or type the command `exit`) and type the following into your computer:
 ```
-echo "trying out scp" >> testing_scp.txt
+$ echo "trying out scp" >> testing_scp.txt
 ```
 ```
-scp testing_scp.txt cs15lwi<xyz>@ieng6.ucsd.edu:~/
+$ scp testing_scp.txt cs15lwi<xyz>@ieng6.ucsd.edu:~/
 ```
 
 You'll be asked for your password again, similar to when you logged in using `ssh`. 

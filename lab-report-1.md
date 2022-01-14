@@ -68,24 +68,42 @@ On the client (your computer):
 ```
 $ ssh-keygen
 Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/pranavreddy/.ssh/id_rsa): /Users/pranavreddy/.ssh/id_rsa
+Enter file in which to save the key (/Users/<your username>/.ssh/id_rsa): /Users/<your username/.ssh/id_rsa
 Enter passphrase (empty for no passphrase): 
 Enter same passphrase again: 
-Your identification has been saved in /Users/pranavreddy/.ssh/id_rsa
-Your public key has been saved in /Users/pranavreddy/.ssh/id_rsa.pub
-The key fingerprint is:
-SHA256:u77ieuhKRazlLAiVtEWpJZzaUre/W8a66efLNHNSfh0 pranavreddy@pranav.lan
-The key's randomart image is:
-+---[RSA 3072]----+
-| oo+o.           |
-| .*++            |
-|.+.=+.           |
-|+.o*.            |
-|..o +.  S .   E  |
-|   o  .. +   . . |
-|  .  . .X o . .  |
-| .  . +B.* .     |
-|  .oo=BBBo       |
-+----[SHA256]-----+
+Your identification has been saved in /Users/<your username>/.ssh/id_rsa
+Your public key has been saved in /Users/<your username>/.ssh/id_rsa.pub
+
+# ... (more output that is irrelevant to us)
 ```
 
+
+
+I didn't use a passphrase so that I can login without having to enter one, but if you do choose one bear in mind you'll have to enter it each time you login. Here's what mine looks like:
+![ssh_keygen_1.png](ssh_keygen_1.png)
+
+Now in the `.ssh` directory of our user account we have two files: 
+* the private key: `id_rsa`
+* the public key: `id_rsa.pub`.
+
+Now we need to get `id_rsa.pub` onto the server. We will use scp to do this.
+
+```
+# On client
+$ ssh cs15lwi<xyz>@ieng6.ucsd.edu:~/
+<password>
+
+# Now on server
+$ mkdir .ssh
+$ exit
+
+# Back on client
+$ scp /Users/<your username>/.ssh/id_rsa.pub cs15lwi22<xyz>@ieng6.ucsd.edu:~/.ssh/authorized_keys
+```
+This will copy `id_rsa.pub` (the public key) to the `.ssh` directory on the server that we made. 
+
+![ssh_keygen_2.png](ssh_keygen_2.png)
+
+Now when you try logging in, you shouldn't need a password. Try it yourself. 
+
+## 6. Optimizing Remote Running

@@ -57,4 +57,35 @@ The `:~/` part at the end is new. The `:` tells the program that you are specify
 It should look something like this:
 ![scp.png](scp.png)
 
+Now if you log in again using `ssh`, you'll be able to see that there is a file called `testing_scp.txt` on the server.
+
 ## 5. Setting an `ssh` Key
+Entering our password each time we use `ssh` or `scp` is very tedious. Luckily, we can avoid having to do this everytime if we use `ssh` keys. The idea is that we'll use a program called `ssh-keygen` to create two "keys": a **public key** and a **private key**. The public key will go on the server (and any other servers you want to log into) and we'll keep the private key on our machine. Now whenever we login, we can use this public-private key pair to login instead of a password.
+
+***Note: This means whoever has your private key can login to any machine with the corresponding public key. Be careful.***
+
+On the client (your computer):
+```
+$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/pranavreddy/.ssh/id_rsa): /Users/pranavreddy/.ssh/id_rsa
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/pranavreddy/.ssh/id_rsa
+Your public key has been saved in /Users/pranavreddy/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:u77ieuhKRazlLAiVtEWpJZzaUre/W8a66efLNHNSfh0 pranavreddy@pranav.lan
+The key's randomart image is:
++---[RSA 3072]----+
+| oo+o.           |
+| .*++            |
+|.+.=+.           |
+|+.o*.            |
+|..o +.  S .   E  |
+|   o  .. +   . . |
+|  .  . .X o . .  |
+| .  . +B.* .     |
+|  .oo=BBBo       |
++----[SHA256]-----+
+```
+

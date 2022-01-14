@@ -25,3 +25,14 @@ The final product should look something like this:
 
 ![ssh.png](ssh.png)
 
+# Trying Some Commands
+Now that you're logged in, try running some commands like `cd`, `mkdir`, `echo`, or `ls`.
+
+Some cool commands:
+* `cd ~`
+* `whoami`
+* `pwd`
+* `ls -l`
+* `ls -lat`
+
+# Moving Files With `scp`

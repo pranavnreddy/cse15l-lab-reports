@@ -5,7 +5,7 @@
 ## 1. Installing VScode
 We need a place on our computer to edit our code. There are a lot of popular choices, but we will use Visual Studio Code (VSCode) from Microsoft. 
 
-Download and install VSCode [here](https://code.visualstudio.com/). Follow their instructions for installing it on your machine.
+Download and install VSCode **[here](https://code.visualstudio.com/)**. Follow their instructions for installing it on your machine.
 
 When you finish you should be able to open VSCode and see a screen like this (mine may look different due to different themes, fonts, etc): 
 
@@ -14,7 +14,7 @@ When you finish you should be able to open VSCode and see a screen like this (mi
 ## 2. Remotely Connecting
 A lot of CSE courses involve using the UCSD lab computers. However, sometimes we are not able to physically access these computers. To get around this, let's remotely connect to the UCSD servers.
 
-First, open a terminal in VSCode (Control + Shift + `, or use the menu). Then, type in this command (without the $):
+First, open a terminal in VSCode (Control + Shift + `, or use the menu) or use the built-in terminal if you are on a Mac or Linux. Then, type in this command (without the $):
 
 ```
 $ ssh cs15lwi22<xyz>@ieng6.ucsd.edu
@@ -41,11 +41,11 @@ Some cool commands:
 ![running_commands](running_commands.png)
 
 ## 4. Moving Files With `scp`
-An important tool in working with remote connections is the ability to move files between these two computers. We can use a variety of different tools for this, but we will use a command-line tool to accomplish this here
+An important tool in working with remote connections is the ability to move files between these two computers. We can use a variety of different tools for this, but we will use a command-line tool to accomplish this here.
 
-This commands is called `scp`, and it is from on the client (your computer, not logged into the server), to send files to the server (ieng6.ucsd.edu). 
+This command is called `scp`. It is used from the client (your computer, not logged into the server) to send files to the server (ieng6.ucsd.edu). 
 
-Logout of the server (Control+D or type the command `exit`) and type the following into your computer:
+Logout of the server (Control+D or type the command `exit`) and type the following commands into your computer:
 ```
 $ echo "trying out scp" >> testing_scp.txt
 ```
@@ -55,12 +55,12 @@ $ scp testing_scp.txt cs15lwi<xyz>@ieng6.ucsd.edu:~/
 
 You'll be asked for your password again, similar to when you logged in using `ssh`. 
 
-The `:~/` part at the end is new. The `:` tells the program that you are specifying a remote location (not on your computer) and the `~/` specifies where to put the file. In this case it will be located in you home directory.
+The `:~/` part at the end is new. The `:` tells the program that you are specifying a remote location (not on your computer) and the `~/` specifies to put the file in you home directory.
 
 It should look something like this:
 ![scp.png](scp.png)
 
-Now if you log in again using `ssh`, you'll be able to see that there is a file called `testing_scp.txt` on the server.
+Now if you login to the server again using `ssh`, you'll be able to see that there is a file called `testing_scp.txt` on the server. Try it out yourself.
 
 ## 5. Setting an `ssh` Key
 Entering our password each time we use `ssh` or `scp` is very tedious. Luckily, we can avoid having to do this everytime if we use `ssh` keys. The idea is that we'll use a program called `ssh-keygen` to create two "keys": a **public key** and a **private key**. The public key will go on the server (and any other servers you want to log into) and we'll keep the private key on our machine. Now whenever we login, we can use this public-private key pair to login instead of a password.

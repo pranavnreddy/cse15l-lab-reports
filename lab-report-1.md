@@ -142,4 +142,4 @@ Suppose we had a java file called WhereAmI.java that printed out the current dir
 $ scp WhereAmI.java cs15lwi22<xyz>@ieng6.ucsd.edu:~/ ; ssh cs15lwi22<xyz>@ieng6.ucsd.edu "javac WhereAmI.java ; java WhereAmI"
 ```
 
-Typing this out would take 124 keystrokes, but each time after that we can just press the up arrow to pull back this command. This reduces copying and running the file to just 1 command.
+Typing this out would take 124 keystrokes, but each time after that we can just press the up arrow to pull back this command. This reduces copying and running the file to just 1 keystroke for 1 command.

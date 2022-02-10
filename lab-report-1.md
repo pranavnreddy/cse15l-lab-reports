@@ -9,7 +9,7 @@ Download and install VSCode **[here](https://code.visualstudio.com/)**. Follow t
 
 When you finish you should be able to open VSCode and see a screen like this (mine may look different due to different themes, fonts, etc): 
 
-![VSCode.png](VSCode.png)
+![VSCode.png](lab-report-1-images/VSCode.png)
 
 ## 2. Remotely Connecting
 A lot of CSE courses involve using the UCSD lab computers. However, sometimes we are not able to physically access these computers. To get around this, let's remotely connect to the UCSD servers.
@@ -26,7 +26,7 @@ You might get a message along the lines of "the authenticity of so-and-so cannot
 
 The final product should look something like this:
 
-![ssh.png](ssh.png)
+![ssh.png](lab-report-1-images/ssh.png)
 
 ## 3. Trying Some Commands
 Now that you're logged in, try running some commands like `cd`, `mkdir`, `echo`, or `ls`.
@@ -38,7 +38,7 @@ Some cool commands:
 * `ls -l`
 * `ls -lat`
 
-![running_commands](running_commands.png)
+![running_commands](lab-report-1-images/running_commands.png)
 
 ## 4. Moving Files With `scp`
 An important tool in working with remote connections is the ability to move files between these two computers. We can use a variety of different tools for this, but we will use a command-line tool to accomplish this here.
@@ -58,7 +58,7 @@ You'll be asked for your password again, similar to when you logged in using `ss
 The `:~/` part at the end is new. The `:` tells the program that you are specifying a remote location (not on your computer) and the `~/` specifies to put the file in you home directory.
 
 It should look something like this:
-![scp.png](scp.png)
+![scp.png](lab-report-1-images/scp.png)
 
 Now if you login to the server again using `ssh`, you'll be able to see that there is a file called `testing_scp.txt` on the server. Try it out yourself.
 
@@ -83,7 +83,7 @@ Your public key has been saved in /Users/<your username>/.ssh/id_rsa.pub
 
 
 I didn't use a passphrase so that I can login without having to enter one, but if you do choose one bear in mind you'll have to enter it each time you login. Here's what mine looks like:
-![ssh_keygen_1.png](ssh_keygen_1.png)
+![ssh_keygen_1.png](lab-report-1-images/ssh_keygen_1.png)
 
 Now in the `.ssh` directory of our user account we have two files: 
 * the private key: `id_rsa`
@@ -105,7 +105,7 @@ $ scp /Users/<your username>/.ssh/id_rsa.pub cs15lwi22<xyz>@ieng6.ucsd.edu:~/.ss
 ```
 This will copy `id_rsa.pub` (the public key) to the `.ssh` directory on the server that we made. 
 
-![ssh_keygen_2.png](ssh_keygen_2.png)
+![ssh_keygen_2.png](lab-report-1-images/ssh_keygen_2.png)
 
 Now when you try logging in, you shouldn't need a password. Try it yourself. 
 
@@ -133,7 +133,7 @@ Combining all of these we can get something like this:
 $ ssh cs15lwi22<xyz>@ieng6.ucsd.edu "pwd ; echo testing >> testing.txt ; mkdir test_directory ; mv testing.txt test_directory ; cd test_directory ; pwd ; cat test.txt"
 ```
 
-![optimizing_commands.png](optimizing_commands.png)
+![optimizing_commands.png](lab-report-1-images/optimizing_commands.png)
 
 
 Suppose we had a java file called WhereAmI.java that printed out the current directory and user. To make a local edit, then send it to the server would take a command like this:

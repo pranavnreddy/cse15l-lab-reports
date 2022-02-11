@@ -1,4 +1,4 @@
-[Back to the main page](index.md)
+[Back to the main page](../index.md)
 
 # Lab Report 2
 

@@ -1,3 +1,5 @@
+[Back to the main page](index.md)
+
 # Streamlining `ssh` Configuration
 Typing out my username every time I need to log in is tedious, and I'm a busy man who can't be bothered to do all this typing. Let's speed up this `ssh` thing.
 

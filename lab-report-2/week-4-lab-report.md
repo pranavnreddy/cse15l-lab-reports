@@ -1,3 +1,5 @@
+[Back to the main page](index.md)
+
 # Lab Report 2
 
 ![code_changes.png](images/code_changes.png)

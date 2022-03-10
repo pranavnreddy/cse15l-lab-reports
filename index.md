@@ -5,3 +5,5 @@
 [lab report 3](lab-report-3/lab-report-3-week-6.md)
 
 [lab report 4](lab-report-4/lab-report-4-week-8.md)
+
+[lab report 5](lab-report-5/lab-report-5-week-10.md)
